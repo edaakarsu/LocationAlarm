@@ -1,26 +1,23 @@
 package com.eu.locationalarm;
 
-import androidx.annotation.MainThread;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
-import android.os.TransactionTooLargeException;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.eu.locationalarm.action.ProfileButtonAction;
+
+import java.util.List;
 
 
 public class MainSelectProfile extends AppCompatActivity {
 
-    public ImageButton btnGuess;
-    Intent intent;
+    //TODO List şeklinde tüm profile tutulmalı
+    private ProfileButton profileButton;
     private Toolbar toolbar;
 
 
@@ -33,31 +30,22 @@ public class MainSelectProfile extends AppCompatActivity {
 
     }
 
+    //TODO profile bilgisini db üzerinden çekmek gerekiyor. Her profile için listeye birer obje eklemelisin
     private void init() {
         initToolbar();
         initImgGuess();
-
     }
 
     private void initToolbar() {
         toolbar = findViewById(R.id.tbSelectProfile);
         toolbar.setTitle("Select Profile");
         setSupportActionBar(toolbar);
-
     }
 
 
     private void initImgGuess() {
-        btnGuess = findViewById(R.id.btnGuess);
-        btnGuess.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(MainSelectProfile.this,MainLocation.class);
-                startActivity(intent);
-            }
-        });
-
+        profileButton = findViewById(R.id.profileButton);
+        profileButton.setOnClickListener(new ProfileButtonAction(this, profileButton));
     }
 
     @Override
