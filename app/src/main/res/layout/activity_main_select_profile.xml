@@ -10,8 +10,8 @@
 
 <!--    For adding toolbar : -->
 
-    <ImageButton
-        android:id="@+id/btnGuess"
+    <com.eu.locationalarm.ProfileButton
+        android:id="@+id/profileButton"
         android:layout_width="127dp"
         android:layout_height="143dp"
         android:layout_marginStart="16dp"
