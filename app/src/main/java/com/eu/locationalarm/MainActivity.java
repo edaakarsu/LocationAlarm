@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         imgLogo = findViewById(R.id.imgLogo);
         txtAppName=findViewById(R.id.txtAppName);
-        intent = new Intent(MainActivity.this,MainSelectProfile.class);
+        intent = new Intent(MainActivity.this,MainLocation.class);
     }
 
 }
