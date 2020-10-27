@@ -281,20 +281,20 @@ public class MainLocation extends AppCompatActivity implements OnMapReadyCallbac
         setSupportActionBar(toolbar);
 
         // for adding back button
-        if (getSupportActionBar() != null) {
+       /* if (getSupportActionBar() != null) {
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
+        }*/
     }
 
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this,MainSelectProfile.class);
-        startActivity(intent);
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        Intent intent = new Intent(this,MainSelectProfile.class);
+//        startActivity(intent);
+//        finish();
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
